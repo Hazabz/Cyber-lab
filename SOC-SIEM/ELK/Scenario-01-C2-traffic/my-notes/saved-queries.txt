@@ -10,7 +10,7 @@
  2.1 Click on one of the rows of the 'Time' column
  2.2 Use source_ip to togle column in table
  2.3 Under the 'Selected fields' found at the left pane, click the source_ip to see the top values for the source_ip visualisation 
-     (something like 192.166.65.52 -> 99.6% and 92.166.65.54 -> 0.4%
+     (something like 192.166.65.52 -> 99.6% and 92.166.65.54 -> 0.4%)
  
 # Step 3
  3.1 Apply a filter of 'source_ip: 192.166.65.54' to filter the table obtained in Step 2
