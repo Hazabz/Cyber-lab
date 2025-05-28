@@ -1,0 +1,37 @@
+# Queries (KQL) and detail steps while investigating the HTTP traffic logs (considering the index of connection_logs)
+
+  
+# Step 1
+ 1.1 Use the time filter to set the start data and end date like March 1, 2022 @00:00:00.00 -> March 31, 2022 @23:30:00.00 to get the log filter for the month of March 2022.
+ 1.2 Click to apply 'Update' which is next to the time filter
+ 1.3 Check for the total number of events/traffic returned for the filtered time (that is the month of March 2022) at the timeline pane
+
+# Step 2
+ 2.1 Click on one of the rows of the 'Time' column
+ 2.2 Use source_ip to togle column in table
+ 2.3 Under the 'Selected fields' found at the left pane, click the source_ip to see the top values for the source_ip visualisation 
+     (something like 192.166.65.52 -> 99.6% and 92.166.65.54 -> 0.4%
+ 
+# Step 3
+ 3.1 Apply a filter of 'source_ip: 192.166.65.54' to filter the table obtained in Step 2
+ 3.2 Once the table is filtered, look for user_agent at the expanded document in one of the rows
+ 3.3. Keep note of the user_agent and the value 'bitsadmin' and further exploring/researching will reveal that bitsadmin might have been used to download a suspocious file
+
+
+# Step 4
+ 4.1 Look for the 'host' field of the expanded document under any row of the filtered table (Step 3) related to the source IP 192.166.65.54
+ 4.2 Host pastebin.com indicates the filesharing platform
+
+
+# Step 5
+ 5.1 Look for the 'uri' field and corresponding value (/yTg0Ah6a)
+ 5.2 With the host and uri values, the complete URL of the C2 endpoint would be pastebin.com/yTg0Ah6a
+
+
+# Step 6
+ 6.1 Using the identified URL of pastebin.com/yTg0Ah6a and opening in a browser reveals secret.txt
+
+
+# Step 7
+ 7.1 Note the flag THM{SECRET__CODE} under secret.txt    
+
