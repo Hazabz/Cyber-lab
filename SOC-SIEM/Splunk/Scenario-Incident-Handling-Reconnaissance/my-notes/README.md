@@ -1,4 +1,4 @@
-# Scenario: Website Defacement Attack – Cyber Kill Chain Investigation using Splunk SIEM Solution
+# Scenario: Website Defacement Attack – Incident Handling and Cyber Kill Chain Investigation Using Splunk SIEM Solution
 
 
 ## Overview
