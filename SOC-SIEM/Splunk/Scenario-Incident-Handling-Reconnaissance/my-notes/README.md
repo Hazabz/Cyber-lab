@@ -3,15 +3,27 @@
 
 ## Overview
 
-A large organisation, Wayne Enterprises, experienced a cyberattack that led to the defacement of their public-facing website. 
-The site now shows a message from the attackers stating, "YOUR SITE HAS BEEN DEFACED."
+A large organisation, Wayne Enterprises, has reported a major security incident involving the defacement of their public-facing website: 
+[http://www.imreallynotbatman.com](http://www.imreallynotbatman.com). The attackers left a visible message on the homepage stating, "YOUR SITE HAS BEEN DEFACED," 
+confirming a breach and unauthorised access to internal systems.
 
-As a SOC Analyst, you are tasked with investigating the cyberattack using **Splunk** SIEM solution and mapping each of the attacker's activities/steps to the **Cyber Kill Chain** model.
+As part of the organisation's structured **Incident Handling** process, a SOC Analyst is tasked with leading the investigation using **Splunk SIEM**. 
+Therefore, the primary objective is to identify the attacker’s path and activities—including **tactics, techniques, and procedures (TTPs)**—uncover compromised assets, 
+and map each malicious action to the corresponding stage in the **Cyber Kill Chain** model.
 
-To simulate a realistic environment, the investigation uses dataset from the **Boss of the SOC (BOTS) Dataset – Version 1**, a publicly available dataset provided by Splunk.
-This dataset includes various logs such as VPN connections, IDS alerts, authentication attempts, and system activity—enabling comprehensive tracking of attacker behaviours 
-across multiple stages of the attack.
 
+To simulate a realistic enterprise SOC environment, this investigation leverages the **Boss of the SOC (BOTS) Dataset – Version 1**, 
+which contains VPN logs, IDS alerts, web access data, system activity logs, and authentication records.
+
+In addition to Cyber Kill Chain mapping, this case study is framed around the **Incident Handling Lifecycle**, which includes:
+
+
+- 🔹 **Preparation**: Ensuring logging is centralised and accessible through Splunk.
+- 🔹 **Detection and Analysis**: Identifying anomalies and suspicious behaviour through correlation searches and threat intelligence.
+- 🔹 **Containment, Eradication, and Recovery**: Analysing how the attacker moved through the environment and proposing actions to neutralize the threat.
+- 🔹 **Post-Incident Activity**: Documenting findings, lessons learned, and recommendations to harden defenses against similar attacks.
+
+This hands-on case study demonstrates how incident response and threat detection practices converge through SIEM-driven investigation and structured forensic analysis.
 
 ## 🔍 Objective
 - Investigate how the attacker gained initial access.
