@@ -32,7 +32,6 @@ Since the dataset includes network-related logs (e.g., web traffic), we can begi
 ###   Step 2: initial search for reconnaissance activity
 Run the following SPL query in the **Search & Reporting** app:
 
-```spl
 index=botsv1 imreallynotbatman.com
 
 Using this query, we look for the event logs in the index "botsv1" that contains the term imreallynotbatman.com.
@@ -42,7 +41,6 @@ For example, you can see the log source 'stream:http' while clicking the 'source
 ###  Step 3: Narrowing down the search for reconnaissance activity
 Run the following SPL query in the **Search & Reporting** app. Or optionally, after Step 1 and after clicking the sourcetype, you can click the stream:http log source
 
-```spl
 index=botsv1 imreallynotbatman.com sourcetype=stream:http
 
 As there are several source types as seen above, this query will help us to look for the term imreallynotbatman.comin in the stream:http log source 
@@ -58,7 +56,6 @@ Examining on each IP and looking at corresponding logs of each IP reveals that t
 Searching using the sourcetype 'suricata' can help us identify signature alerts information.
 For example, using the following search query:
 
-```spl
 index=botsv1 imreallynotbatman.com src_ip="40.80.148.42" sourcetype=suricata 
 
 Looking further at one of the returned event logs, it will show 'joomla' as the CMS used by the webserver. 
@@ -74,7 +71,6 @@ Hence, we can see that the IP address of the webserver (imreallynotbatman.com) i
 ###  Step 7: Determining web scanner or tool leveraged by the attacker
 To identify the web scanner used by the attacker (40.80.148.42 IP address), we can use the http_user_agent field in Suricata HTTP logs. Apply the following query:
 
-```spl
 index=botsv1 imreallynotbatman.com src_ip="40.80.148.42" sourcetype=suricata | stats count by http.http_user_agent
 Further digging at the http.http_user_agent output, we can see acunetix_wvs_security_test, which means the web scanner used by the attacker is Acunetix Web Vulnerability Scanner. 
 
